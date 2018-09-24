@@ -1,0 +1,31 @@
+{
+  "drive": "DriveMysql",
+  "database": "lojinhadoze",
+  "connections": "local",
+  "table": "product",
+  "columns": [
+    "id",
+    "name",
+    "description",
+    "image",
+    "price",
+    "category",
+    "features"
+  ],
+  "limitpage": "100",
+  "where": {
+    "optional": {
+      "id": "/^[a-zA-Z0-9]+$/",
+      "name": "/^[a-zA-Z0-9]+$/",
+      "description": "/^[a-zA-Z0-9]+$/"
+    }
+  },
+  "requires": {
+    "REQUEST": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ]
+  }
+}

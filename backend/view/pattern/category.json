@@ -1,0 +1,28 @@
+
+{
+  "drive": "DriveMysql",
+  "database": "lojinhadoze",
+  "connections": "local",
+  "table": "category",
+  "columns": [
+    "id",
+    "name",
+    "description"
+  ],
+  "limitpage": "100",
+  "where": {
+    "optional": {
+      "id": "/^[a-zA-Z0-9]+$/",
+      "name": "/^[a-zA-Z0-9]+$/",
+      "description": "/^[a-zA-Z0-9]+$/"
+    }
+  },
+  "requires": {
+    "REQUEST": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "drive": "DriveMysql",
+  "database": "lojinhadoze",
+  "connections": "local",
+  "table": "users",
+  "columns": [
+    "id",
+    "name",
+    "email",
+    "password",
+    "social_id",
+    "zip_code",
+    "zip_number",
+    "zip_additional"
+  ],
+  "limitpage": "100",
+  "where": {
+    "optional": {
+      "id": "/^[a-zA-Z0-9]+$/",
+      "name": "/^[a-zA-Z0-9]+$/",
+      "email": "/^[a-zA-Z0-9]+$/",
+      "password": "/^[a-zA-Z0-9]+$/",
+      "social_id": "/^[a-zA-Z0-9]+$/",
+      "zip_code": "/^[a-zA-Z0-9]+$/",
+      "zip_number": "/^[a-zA-Z0-9]+$/",
+      "zip_additional": "/^[a-zA-Z0-9]+$/"
+    }
+  },
+  "requires": {
+    "REQUEST": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+    ]
+  }
+}
