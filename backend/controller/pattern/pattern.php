@@ -68,6 +68,7 @@ class pattern
                                 $symbol = ' LIKE ';
                             };
                             $this->pattern['whereString'] .= $key . $symbol.'"' . $value . '" AND ';
+                            print($this->pattern['whereString']);
                         } else {
                             $this->pattern['whereString'][$key] = $value;
                         }
