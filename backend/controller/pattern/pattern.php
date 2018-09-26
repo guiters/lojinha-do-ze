@@ -59,8 +59,6 @@ class pattern
         if (isset($this->pattern['where'])) {
             $this->pattern['whereString'] = '';
             foreach ($this->whereType as $where) {
-                var_dump($this->pattern['where'][$where]);
-                die();
                 if (isset($this->pattern['where'][$where])) {
                     foreach ($this->pattern['where'][$where] as $key => $value) {
                         if (isset($this->pattern['database'])) {
