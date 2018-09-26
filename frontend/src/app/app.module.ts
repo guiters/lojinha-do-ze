@@ -15,7 +15,7 @@ import { ProductService } from './services/product/product.service';
 import { UsersService } from './services/users/users.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ROUTING } from './app.routing';
-import { CartComponent } from './store/cart/cart.component';
+import { CartService } from './services/cart/cart.service';
 
 @NgModule({
   declarations: [
@@ -26,15 +26,14 @@ import { CartComponent } from './store/cart/cart.component';
     ProductComponent,
     CheckoutComponent,
     OrdersComponent,
-    LoginComponent,
-    CartComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     ROUTING
   ],
-  providers: [CategoryService, OrderService, ProductService, UsersService],
+  providers: [CategoryService, OrderService, ProductService, UsersService, CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
