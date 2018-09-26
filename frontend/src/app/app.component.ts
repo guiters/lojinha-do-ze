@@ -15,22 +15,6 @@ export class AppComponent {
   title = 'frontend';
 
   constructor(
-    private categoryService: CategoryService,
-    private orderService: OrderService,
-    private productService: ProductService,
-    private usersService: UsersService
   ) {
-    this.categoryService.getCategorys().subscribe(res => {
-      console.log(res);
-    });
-    this.orderService.getOrders().subscribe(res => {
-      console.log(res);
-    });
-    this.productService.getProducts().subscribe(res => {
-      console.log(res);
-    });
-    this.usersService.getUsers().subscribe(res => {
-      console.log(res);
-    });
   }
 }

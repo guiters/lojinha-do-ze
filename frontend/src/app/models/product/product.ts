@@ -6,4 +6,8 @@ export class Product {
     price;
     category;
     features;
+
+    featuresArray() {
+        this.features = this.features.split('|');
+    }
 }

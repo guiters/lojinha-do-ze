@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { Observable, Subject } from 'rxjs';
 import 'rxjs/Rx';
@@ -28,11 +28,17 @@ export class ProductService {
       }).map(res => res[0]);
   }
 
-  getProduct(id): Observable<Product> {
-    return this.http.request<Product>('GET', this.api + 'product?id=' + id,
+  getProduct(id, name?): Observable<Product[]> {
+    let query = '';
+    if (id === 0) {
+      query = '?name=' + name + '';
+    } else {
+      query = '?id=' + id;
+    }
+    return this.http.request<Product[]>('GET', this.api + 'product' + query,
       {
         headers: new HttpHeaders({ 'Authorization': environment.apikey })
-      }).map(res => res[0]);
+      });
   }
 
   editProduct(product: Product, id) {

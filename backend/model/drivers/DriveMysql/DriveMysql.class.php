@@ -66,7 +66,7 @@ class DriveMysql
             $sql .= " LIMIT " . $limit;
         }
         $result = [];
-
+        var_dump($sql);
 
         $res = mysqli_query($mysqli, $sql) or die(json_encode($this->error_report('select', mysqli_error($mysqli), $sql, $table), JSON_PRETTY_PRINT));
         while ($row = $res->fetch_assoc()) {

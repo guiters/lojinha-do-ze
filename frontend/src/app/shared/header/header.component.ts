@@ -9,9 +9,6 @@ import { Location } from '@angular/common';
 })
 export class HeaderComponent implements OnInit {
   constructor(private route: ActivatedRoute) {
-    route.url.subscribe(res => {
-      console.log(res);
-    });
   }
 
   ngOnInit() {

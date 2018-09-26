@@ -1,67 +1,61 @@
-
 <div class="footer-top-area">
-  <div class="zigzag-bottom"></div>
-  <div class="container">
-      <div class="row">
-          <div class="col-md-3 col-sm-6">
-              <div class="footer-about-us">
-                  <h2>Lojinha do <span>Ze</span></h2>
-                  <p>Created by Guilherme Camacho for skills test.
-                    The source code is in my account on <a href="https://github.com/guiters/lojinha-do-ze">github</a>
-                  </p>
-                  <div class="footer-social">
-                      <a href="https://www.facebook.com/evguiters" target="_blank"><i class="fa fa-facebook"></i></a>
-                      <a href="https://twitter.com/guitersp" target="_blank"><i class="fa fa-twitter"></i></a>
-                      <a href="https://www.instagram.com/guitersp/?hl=pt-br" target="_blank"><i class="fa fa-instagram"></i></a>
-                      <a href="https://www.linkedin.com/in/guilherme-camacho-454b10b8" target="_blank"><i class="fa fa-linkedin"></i></a>
-                  </div>
-              </div>
-          </div>
-          
-          <div class="col-md-3 col-sm-6">
-              <div class="footer-menu">
-                  <h2 class="footer-wid-title">User Navigation </h2>
-                  <ul>
-                      <li><a href="">My account</a></li>
-                      <li><a href="/login">Login</a></li>
-                      <li><a href="">Shop</a></li>
-                  </ul>                        
-              </div>
-          </div>
-          
-          <div class="col-md-3 col-sm-6">
-              <div class="footer-menu">
-                  <h2 class="footer-wid-title">Categories</h2>
-                  <ul>
-                      <li><a href="">Mobile Phone</a></li>
-                      <li><a href="">Home accesseries</a></li>
-                      <li><a href="">LED TV</a></li>
-                      <li><a href="">Computer</a></li>
-                      <li><a href="">Gadets</a></li>
-                  </ul>                        
-              </div>
-          </div>
-          
-          <div class="col-md-3 col-sm-6">
-              <div class="footer-newsletter">
-                  <h2 class="footer-wid-title">Let's talk</h2>
-                  <p>If you like my job and want talk with my press button bellow</p>
-                  <div class="newsletter-form">
-                      <a class="add_to_cart_button" href="https://wa.me/5511993867346">Talk with me</a>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <div class="footer-about-us">
+                    <h2>Lojinha do <span>Ze</span></h2>
+                    <p>Created by Guilherme Camacho for skills test. The source code is in my account on <a href="https://github.com/guiters/lojinha-do-ze">github</a>
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/evguiters" target="_blank"><i class="fa fa-facebook"></i></a>
+                        <a href="https://twitter.com/guitersp" target="_blank"><i class="fa fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/guitersp/?hl=pt-br" target="_blank"><i class="fa fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/guilherme-camacho-454b10b8" target="_blank"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="footer-menu">
+                    <h2 class="footer-wid-title">User Navigation </h2>
+                    <ul>
+                        <li><a href="">My account</a></li>
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="">Shop</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="footer-menu">
+                    <h2 class="footer-wid-title">Categories</h2>
+                    <ul *ngIf="categorys">
+                        <li *ngFor='let cat of categorys'><a href="/category/{{cat.id}}/{{cat.name}}">{{cat.name}}</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="footer-newsletter">
+                    <h2 class="footer-wid-title">Let's talk</h2>
+                    <p>If you like my job and want talk with my press button bellow</p>
+                    <div class="newsletter-form">
+                        <a class="add_to_cart_button" href="https://wa.me/5511993867346">Talk with me</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="footer-bottom-area">
-  <div class="container">
-      <div class="row">
-          <div class="col-md-8">
-              <div class="copyright">
-                 <p>&copy; 2018 uCommerce. All Rights Reserved. <a href="https://guilhermecamacho.com" target="_blank">Guilhermecamacho.com</a></p>
-              </div>
-          </div>
-      </div>
-  </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="copyright">
+                    <p>&copy; 2018 uCommerce. All Rights Reserved. <a href="https://guilhermecamacho.com" target="_blank">Guilhermecamacho.com</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

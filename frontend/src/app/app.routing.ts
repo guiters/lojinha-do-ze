@@ -9,7 +9,7 @@ import { CartComponent } from './store/cart/cart.component';
 
 export const AppRoutes: Routes = [
     { path: '', component: ShopComponent },
-    { path: 's:name', component: ShopComponent },
+    { path: 's/:search', component: ShopComponent },
     { path: 'product/:id/:name', component: ProductComponent },
     { path: 'cart', component: CartComponent },
     { path: 'checkout', component: CheckoutComponent },
