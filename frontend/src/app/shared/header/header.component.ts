@@ -8,10 +8,23 @@ import { Location } from '@angular/common';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  constructor(private route: ActivatedRoute) {
+
+  searchTag;
+
+  constructor(private route: ActivatedRoute, private router: Router) {
   }
 
   ngOnInit() {
+
   }
+
+  search() {
+    window.location.href  = '/s/' + this.searchTag;
+  }
+
+
+  onKey(event) { this.searchTag = event.target.value; }
+
+
 
 }

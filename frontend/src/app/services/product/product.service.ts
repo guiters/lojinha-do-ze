@@ -31,7 +31,7 @@ export class ProductService {
   getProduct(id, name?): Observable<Product[]> {
     let query = '';
     if (id === 0) {
-      query = '?name=' + name + '';
+      query = '?name=%' + name + '%';
     } else {
       query = '?id=' + id;
     }

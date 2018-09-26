@@ -17,6 +17,16 @@
     display: block;
     margin: 0 auto 15px;
 }
+.searchTop{
+    height: 60px;
+}
+.searchTop input{
+    margin-top: 9px;
+    height: 32px;
+}
+.searchTop button{
+    margin-top: 9px;
+}
 a:focus { outline: 0px solid }
 img {
     max-width: 100%;
