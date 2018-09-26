@@ -62,10 +62,11 @@ class pattern
                 if (isset($this->pattern['where'][$where])) {
                     foreach ($this->pattern['where'][$where] as $key => $value) {
                         if (isset($this->pattern['database'])) {
-                            $symbol = '='
-                            if(strpos($value, '%') !== false){
-                                $symbol = ' LIKE '
-                            }
+                            $symbol = '=';
+                            $contains = strpos($value, '%');
+                            if ($contains !== false) {
+                                $symbol = ' LIKE ';
+                            };
                             $this->pattern['whereString'] .= $key . $symbol.'"' . $value . '" AND ';
                         } else {
                             $this->pattern['whereString'][$key] = $value;
