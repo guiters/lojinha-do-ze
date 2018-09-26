@@ -69,7 +69,7 @@ class pattern
                             };
                             $this->pattern['whereString'] .= $key . $symbol.'"' . $value . '" AND ';
                             var_dump($this->pattern['whereString']);
-                            die()
+                            die();
                         } else {
                             $this->pattern['whereString'][$key] = $value;
                         }
