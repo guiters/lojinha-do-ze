@@ -119,7 +119,7 @@ class pattern
                 }
             }
         }
-        print($this->pattern['where'])
+        print($this->pattern['where']);
         #TODO Verificar se existe o parametro enviado na request dentro do pattern
         if (isset($this->pattern['REQUEST_DATA'])) {
             unset($this->pattern['REQUEST_DATA']);
