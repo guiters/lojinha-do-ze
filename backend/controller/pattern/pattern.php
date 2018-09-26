@@ -58,11 +58,12 @@ class pattern
 
         if (isset($this->pattern['where'])) {
             $this->pattern['whereString'] = '';
-            die('aqui');
+            
             foreach ($this->whereType as $where) {
                 if (isset($this->pattern['where'][$where])) {
                     foreach ($this->pattern['where'][$where] as $key => $value) {
                         if (isset($this->pattern['database'])) {
+                            die('aqui');
                             $symbol = '=';
                             $contains = strpos($value, '%');
                             if ($contains !== false) {
