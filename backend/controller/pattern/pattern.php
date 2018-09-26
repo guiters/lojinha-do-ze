@@ -60,6 +60,8 @@ class pattern
             $this->pattern['whereString'] = '';
             foreach ($this->whereType as $where) {
                 if (isset($this->pattern['where'][$where])) {
+                    var_dump($this->pattern['where'][$where]);
+                    die('aqui');
                     foreach ($this->pattern['where'][$where] as $key => $value) {
                         if (isset($this->pattern['database'])) {
                             die('aqui');
