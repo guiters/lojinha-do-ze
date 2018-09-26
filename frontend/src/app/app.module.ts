@@ -14,6 +14,8 @@ import { OrderService } from './services/order/order.service';
 import { ProductService } from './services/product/product.service';
 import { UsersService } from './services/users/users.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ROUTING } from './app.routing';
+import { CartComponent } from './store/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -24,11 +26,13 @@ import { HttpClientModule } from '@angular/common/http';
     ProductComponent,
     CheckoutComponent,
     OrdersComponent,
-    LoginComponent
+    LoginComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    ROUTING
   ],
   providers: [CategoryService, OrderService, ProductService, UsersService],
   bootstrap: [AppComponent]
