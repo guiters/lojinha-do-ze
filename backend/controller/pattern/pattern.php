@@ -60,20 +60,14 @@ class pattern
             $this->pattern['whereString'] = '';
             foreach ($this->whereType as $where) {
                 if (isset($this->pattern['where'][$where])) {
-                    var_dump($this->pattern['where'][$where]);
-                    die('aqui');
                     foreach ($this->pattern['where'][$where] as $key => $value) {
                         if (isset($this->pattern['database'])) {
-                            die('aqui');
                             $symbol = '=';
                             $contains = strpos($value, '%');
                             if ($contains !== false) {
                                 $symbol = ' LIKE ';
                             };
-
                             $this->pattern['whereString'] .= $key . $symbol.'"' . $value . '" AND ';
-                            var_dump($this->pattern['whereString']);
-                            die();
                         } else {
                             $this->pattern['whereString'][$key] = $value;
                         }
@@ -119,6 +113,10 @@ class pattern
         foreach ($get as $key => $value) {
             foreach ($this->whereType as $where) {
                 if (isset($this->pattern['where'][$where][$key]) && isRegex($this->pattern['where'][$where][$key])) {
+                    var_dump($this->pattern['where'][$where][$key]);
+                    var_dump($value);
+                    var_dump(preg_match($this->pattern['where'][$where][$key], $value));
+
                     if (preg_match($this->pattern['where'][$where][$key], $value)) {
                         $this->pattern['where'][$where][$key] = $value;
                     }
