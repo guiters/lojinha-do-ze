@@ -58,6 +58,7 @@ class pattern
 
         if (isset($this->pattern['where'])) {
             $this->pattern['whereString'] = '';
+            die('aqui');
             foreach ($this->whereType as $where) {
                 if (isset($this->pattern['where'][$where])) {
                     foreach ($this->pattern['where'][$where] as $key => $value) {
@@ -67,6 +68,7 @@ class pattern
                             if ($contains !== false) {
                                 $symbol = ' LIKE ';
                             };
+
                             $this->pattern['whereString'] .= $key . $symbol.'"' . $value . '" AND ';
                             var_dump($this->pattern['whereString']);
                             die();
