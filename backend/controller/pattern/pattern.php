@@ -113,10 +113,6 @@ class pattern
         foreach ($get as $key => $value) {
             foreach ($this->whereType as $where) {
                 if (isset($this->pattern['where'][$where][$key]) && isRegex($this->pattern['where'][$where][$key])) {
-                    var_dump($this->pattern['where'][$where][$key]);
-                    var_dump($value);
-                    var_dump(preg_match($this->pattern['where'][$where][$key], $value));
-
                     if (preg_match($this->pattern['where'][$where][$key], $value)) {
                         $this->pattern['where'][$where][$key] = $value;
                     }
