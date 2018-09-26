@@ -68,6 +68,7 @@ class pattern
                                 $symbol = ' LIKE ';
                             };
                             $this->pattern['whereString'] .= $key . $symbol.'"' . $value . '" AND ';
+                            var_dump($this->pattern['whereString']);
                         } else {
                             $this->pattern['whereString'][$key] = $value;
                         }
@@ -119,7 +120,7 @@ class pattern
                 }
             }
         }
-        print($this->pattern['where']);
+        var_dump($this->pattern['where']);
         #TODO Verificar se existe o parametro enviado na request dentro do pattern
         if (isset($this->pattern['REQUEST_DATA'])) {
             unset($this->pattern['REQUEST_DATA']);
