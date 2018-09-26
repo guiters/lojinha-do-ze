@@ -23,6 +23,7 @@
     "@fortawesome/fontawesome-free": "^5.3.1",
     "bootstrap": "^3.3.7",
     "core-js": "^2.5.4",
+    "ngx-mask": "^6.2.4",
     "ngx-toastr": "^9.1.0",
     "rxjs": "^6.0.0",
     "rxjs-compat": "^6.3.3",

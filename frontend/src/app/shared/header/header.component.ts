@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
   }
 
   search() {
-    window.location.href  = '/s/' + this.searchTag;
+    window.location.href = '/s/' + this.searchTag;
   }
 
 

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
@@ -18,6 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ROUTING } from './app.routing';
 import { CartService } from './services/cart/cart.service';
 import { ToastrModule } from 'ngx-toastr';
+import { CepService } from './services/cep/cep.service';
+import { NgxMaskModule } from 'ngx-mask';
 
 
 @NgModule({
@@ -35,10 +37,11 @@ import { ToastrModule } from 'ngx-toastr';
     BrowserModule,
     HttpClientModule,
     ROUTING,
+    NgxMaskModule.forRoot(),
     BrowserAnimationsModule,
     ToastrModule.forRoot() // ToastrModule added
   ],
-  providers: [CategoryService, OrderService, ProductService, UsersService, CartService],
+  providers: [CategoryService, OrderService, ProductService, UsersService, CartService, CepService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

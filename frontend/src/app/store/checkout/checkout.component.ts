@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../services/product/product.service';
 import { Product } from '../../models/product/product';
+import { CepService } from '../../services/cep/cep.service';
 
 @Component({
   selector: 'app-checkout',
@@ -12,7 +13,7 @@ export class CheckoutComponent implements OnInit {
   cart: Product[] = [];
   cartQTD = {};
   totalPrice = 0;
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService, private cepService: CepService) { }
 
   ngOnInit() {
     const theCart = JSON.parse(sessionStorage.getItem('cart'));
@@ -22,7 +23,6 @@ export class CheckoutComponent implements OnInit {
     this.cartQTD = cartQTD;
     for (let i = 0; i < theCart.length; i++) {
       if (dowCart.indexOf(theCart[i]) === -1) {
-
         dowCart.push(theCart[i]);
         this.productService.getProduct(theCart[i]).subscribe(res => {
           this.cart.push(res[0]);
@@ -30,7 +30,13 @@ export class CheckoutComponent implements OnInit {
         });
       }
     }
-
   }
 
+  cepFind(event) {
+    this.cepService.getCep(event.target.value).subscribe(res => {
+      if (!res['erro']) {
+        console.log(res);
+      }
+    });
+  }
 }

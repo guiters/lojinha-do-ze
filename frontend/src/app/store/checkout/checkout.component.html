@@ -38,7 +38,8 @@
                     <p id="billing_postcode_field" class=" col-sm-4">
                       <label class="" for="billing_postcode">Postcode <abbr title="required" class="required">*</abbr>
                       </label>
-                      <input type="text" value="" placeholder="Postcode / Zip" id="billing_postcode" name="billing_postcode" class="input-text">
+                      <input type="text"  [dropSpecialCharacters]="false" mask="00000-000"  value="" (change)="cepFind($event)" placeholder="Postcode / Zip"
+                        id="billing_postcode" name="billing_postcode" class="input-text">
                     </p>
                     <div class="clear"></div>
 
