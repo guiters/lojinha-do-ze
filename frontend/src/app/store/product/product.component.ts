@@ -24,11 +24,14 @@ export class ProductComponent implements OnInit {
   ngOnInit() {
     this.productService.getProduct(this.id).subscribe(res => {
       this.product = res[0];
+
       this.url = 'product/' + this.product.id + '/' + this.product.name;
       this.prodcat = this.product.category.split('|');
       for (let i = 0; i < this.prodcat.length; i++) {
         this.categoryService.getCategory(this.prodcat[i]).subscribe(cats => {
-          this.categorys.push(cats);
+          if (cats !== undefined) {
+            this.categorys.push(cats);
+          }
         });
       }
     });

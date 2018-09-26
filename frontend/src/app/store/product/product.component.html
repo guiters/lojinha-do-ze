@@ -50,7 +50,7 @@
                   <button class="add_to_cart_button" type="submit">Add to cart</button>
                 </form>
 
-                <div class="product-inner-category">
+                <div class="product-inner-category" *ngIf="categorys">
                   <p>Category:
                     <a *ngFor="let cat of categorys">
                       {{cat.name}}

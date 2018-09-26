@@ -1,6 +1,9 @@
 # Guilherme Camacho - Project presentation
 
 ### Hi, this is my test to join the mobly team.
+[Documentation of API](https://documenter.getpostman.com/view/242542/RWaRM4hx)
+[Test api](http://lojinhadozeapi.guilhermecamacho.com/)
+[Test Url](http://lojinhadoze.guilhermecamacho.com/)
 
 ## Front End
 #### ( directory `/frontend`)
