@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
@@ -16,6 +17,8 @@ import { UsersService } from './services/users/users.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ROUTING } from './app.routing';
 import { CartService } from './services/cart/cart.service';
+import { ToastrModule } from 'ngx-toastr';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +34,9 @@ import { CartService } from './services/cart/cart.service';
   imports: [
     BrowserModule,
     HttpClientModule,
-    ROUTING
+    ROUTING,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot() // ToastrModule added
   ],
   providers: [CategoryService, OrderService, ProductService, UsersService, CartService],
   bootstrap: [AppComponent]

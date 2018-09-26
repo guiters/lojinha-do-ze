@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { ProductService } from '../../services/product/product.service';
 import { Product } from '../../models/product/product';
 import { ActivatedRoute } from '@angular/router';
 import { CartService } from '../../services/cart/cart.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-shop',
@@ -13,7 +14,8 @@ export class ShopComponent implements OnInit {
 
   products: Product[];
   search;
-  constructor(private productService: ProductService, private route: ActivatedRoute, private cartService: CartService) {
+  constructor(private productService: ProductService, private route: ActivatedRoute,
+    private cartService: CartService, private toastr: ToastrService) {
     this.search = this.route.snapshot.paramMap.get('search');
   }
 
@@ -32,8 +34,7 @@ export class ShopComponent implements OnInit {
 
   addtocart(id) {
     this.cartService.addItem(id);
-    console.log(sessionStorage.getItem('cart'));
-
+    this.toastr.success('Item Add to cart', 'Success!');
   }
 
 }

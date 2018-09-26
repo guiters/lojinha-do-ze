@@ -4,6 +4,8 @@ import { ProductService } from '../../services/product/product.service';
 import { ActivatedRoute } from '@angular/router';
 import { Category } from '../../models/category/category';
 import { CategoryService } from '../../services/category/category.service';
+import { CartService } from '../../services/cart/cart.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-product',
@@ -17,7 +19,11 @@ export class ProductComponent implements OnInit {
   url: string;
   categorys: Category[] = [];
   prodcat;
-  constructor(private productService: ProductService, private categoryService: CategoryService, private route: ActivatedRoute) {
+  constructor(private productService: ProductService,
+    private categoryService: CategoryService,
+    private route: ActivatedRoute,
+    private toastr: ToastrService,
+    private cartService: CartService) {
     this.id = this.route.snapshot.paramMap.get('id');
   }
 
@@ -37,4 +43,9 @@ export class ProductComponent implements OnInit {
     });
   }
 
+
+  addtocart(id) {
+    this.cartService.addItem(id);
+    this.toastr.success('Item Add to cart', 'Success!');
+  }
 }
