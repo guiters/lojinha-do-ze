@@ -58,8 +58,8 @@ class pattern
 
         if (isset($this->pattern['where'])) {
             $this->pattern['whereString'] = '';
-            
             foreach ($this->whereType as $where) {
+                die($this->pattern['where'][$where]);
                 if (isset($this->pattern['where'][$where])) {
                     foreach ($this->pattern['where'][$where] as $key => $value) {
                         if (isset($this->pattern['database'])) {
