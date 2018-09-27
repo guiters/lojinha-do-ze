@@ -20,6 +20,7 @@ import { CartService } from './services/cart/cart.service';
 import { ToastrModule } from 'ngx-toastr';
 import { CepService } from './services/cep/cep.service';
 import { NgxMaskModule } from 'ngx-mask';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -36,9 +37,11 @@ import { NgxMaskModule } from 'ngx-mask';
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     ROUTING,
     NgxMaskModule.forRoot(),
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     ToastrModule.forRoot() // ToastrModule added
   ],
   providers: [CategoryService, OrderService, ProductService, UsersService, CartService, CepService],
