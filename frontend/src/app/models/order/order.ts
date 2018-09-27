@@ -3,5 +3,5 @@ export class Order {
     user_id;
     product_id;
     status;
-    timestamp;
+    timestamp?;
 }
